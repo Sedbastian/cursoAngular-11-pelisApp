@@ -1,0 +1,23 @@
+<swiper
+  #swiper
+  [config]="config"
+  (swiper)="onSwiper($event)"
+  (slideChange)="onSlideChange()"
+>
+  <ng-template swiperSlide *ngFor="let actor of cast">
+    <div
+      class="actor img-thumbnail mt-5"
+      *ngIf="actor.profile_path != undefined"
+      [ngStyle]="{
+        'background-size': 'cover',
+        'background-image': 'url(https://image.tmdb.org/t/p/w500' + actor.profile_path + ')',
+      }"
+    ></div>
+    <h3>Actor: {{ actor.name }} / Personaje: {{ actor.character }}</h3>
+    <p>
+      {{ actor.known_for_department }}
+    </p>
+  </ng-template>
+</swiper>
+<button class="slide" (click)="slidePrev()">Prev slide</button>
+<button class="slide" (click)="slideNext()">Next slide</button>

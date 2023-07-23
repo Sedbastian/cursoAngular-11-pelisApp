@@ -37,3 +37,25 @@ hr {
 .block {
   display: block;
 }
+
+.swiperSebi {
+  /* height: 150rem; */
+  /* width: 100%; */
+}
+
+.movieDescription {
+  /* position: absolute; */
+  /* bottom: 0; */
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 100%;
+  height: 25rem;
+  padding: 5px 30px;
+}
+
+button.slide {
+  border: none;
+  border-radius: 0.5rem;
+  background-color: blueviolet;
+  color: white;
+  margin: 1rem;
+}

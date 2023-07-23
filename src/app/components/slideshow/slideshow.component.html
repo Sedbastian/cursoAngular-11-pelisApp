@@ -1,0 +1,23 @@
+<swiper
+  #swiper
+  [config]="config"
+  (swiper)="onSwiper($event)"
+  (slideChange)="onSlideChange()"
+>
+  <ng-template swiperSlide *ngFor="let movie of movies">
+    <div
+      class="movieDescription"
+      [ngStyle]="{
+        'background-size': 'cover',
+        'background-image': 'url(https://image.tmdb.org/t/p/w500' + movie.backdrop_path + ')',
+      }"
+    >
+      <h3>{{ movie.original_title }}</h3>
+      <p>
+        {{ movie.overview }}
+      </p>
+    </div>
+  </ng-template>
+</swiper>
+<button class="slide" (click)="slidePrev()">Prev slide</button>
+<button class="slide" (click)="slideNext()">Next slide</button>
